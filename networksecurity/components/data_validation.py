@@ -45,7 +45,7 @@ class DataValidation:
                 d1=base_df[column]
                 d2=current_df[column]
                 is_same_dist=ks_2samp(d1,d2)
-                if threshold<=is_same_dist.pvalue:
+                if is_same_dist.pvalue <= threshold:
                     is_found=False
                 else:
                     is_found=True
@@ -66,7 +66,7 @@ class DataValidation:
             
               
         
-    def initiate_data_validation(self)->DataIngestionArtifact:
+    def initiate_data_validation(self)->DataValidationArtifact:
         try:
             train_file_path=self.data_ingestion_artifact.trained_file_path
             test_file_path=self.data_ingestion_artifact.test_file_path
@@ -94,8 +94,8 @@ class DataValidation:
             )
             data_validation_artifact = DataValidationArtifact(
                 validation_status=status,
-                valid_train_file_path=self.data_ingestion_artifact.trained_file_path,
-                valid_test_file_path=self.data_ingestion_artifact.test_file_path,
+                valid_train_file_path=self.data_validation_config.valid_train_file_path,
+                valid_test_file_path=self.data_validation_config.valid_test_file_path,
                 # valid_train_file_path=self.data_ingestion_artifact.valid_train_file_path,
                 # valid_test_file_path=self.data_ingestion_artifact.valid_test_file_path,
                 invalid_train_file_path=None,

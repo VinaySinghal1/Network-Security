@@ -1,0 +1,7 @@
+[ 2026-04-30 19:53:15,367 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-04-30 19:53:15,376 ] 107 dagshub - INFO - Accessing as vinaysinghal7976
+[ 2026-04-30 19:53:17,057 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/vinaysinghal7976/Network-Security "HTTP/1.1 200 OK"
+[ 2026-04-30 19:53:19,535 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-04-30 19:53:19,538 ] 107 dagshub - INFO - Initialized MLflow to track repo "vinaysinghal7976/Network-Security"
+[ 2026-04-30 19:53:19,539 ] 107 dagshub - INFO - Repository vinaysinghal7976/Network-Security initialized!
+[ 2026-04-30 19:53:19,539 ] 20 root - INFO - Initiate the data ingestion

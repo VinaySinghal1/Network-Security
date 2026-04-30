@@ -9,7 +9,7 @@ load_dotenv()
 mongo_db_url = os.getenv("MONGODB_URL_KEY")
 print(mongo_db_url)
 import pymongo
-from networksecurity.exception.exception import 
+from networksecurity.exception.exception import CustomException
 from networksecurity.logging.logger import logging
 from networksecurity.pipeline.training_pipeline import TrainingPipeline
 
