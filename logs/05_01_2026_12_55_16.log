@@ -1,0 +1,30 @@
+[ 2026-05-01 12:55:27,242 ] 42 root - INFO - Start data Ingestion
+[ 2026-05-01 12:55:30,161 ] 64 root - INFO - Performed train test split on the dataframe
+[ 2026-05-01 12:55:30,161 ] 66 root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[ 2026-05-01 12:55:30,161 ] 74 root - INFO - Exporting train and test file path.
+[ 2026-05-01 12:55:30,244 ] 83 root - INFO - Exported train and test file path.
+[ 2026-05-01 12:55:30,245 ] 45 root - INFO - Data Ingestion completed and artifact: DataIngestionArtifact(trained_file_path='Artifacts/05_01_2026_12_55_17/data_ingestion/ingested/train.csv', test_file_path='Artifacts/05_01_2026_12_55_17/data_ingestion/ingested/test.csv')
+[ 2026-05-01 12:55:30,251 ] 55 root - INFO - Initiate the data Validation
+[ 2026-05-01 12:55:30,262 ] 32 root - INFO - Required number of column:{number_of_columns}
+[ 2026-05-01 12:55:30,262 ] 33 root - INFO - Data frame has columns:31
+[ 2026-05-01 12:55:30,262 ] 32 root - INFO - Required number of column:{number_of_columns}
+[ 2026-05-01 12:55:30,262 ] 33 root - INFO - Data frame has columns:31
+[ 2026-05-01 12:55:30,424 ] 46 root - INFO - Entered initiate_data_transformation method of datatransformation class 
+[ 2026-05-01 12:55:30,424 ] 49 root - INFO - starting data transformation 
+[ 2026-05-01 12:55:30,436 ] 35 root - INFO - Entered get_data_transformer_object method of Transformation class
+[ 2026-05-01 12:55:30,436 ] 38 root - INFO - Initialise KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2026-05-01 12:55:30,443 ] 46 root - INFO - Entered the save_object method of MainUtils class
+[ 2026-05-01 12:55:30,446 ] 50 root - INFO - Exited the save_object method of MainUtils class
+[ 2026-05-01 12:55:30,446 ] 46 root - INFO - Entered the save_object method of MainUtils class
+[ 2026-05-01 12:55:30,449 ] 50 root - INFO - Exited the save_object method of MainUtils class
+[ 2026-05-01 12:55:31,294 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-05-01 12:55:31,301 ] 107 dagshub - INFO - Accessing as vinaysinghal7976
+[ 2026-05-01 12:55:31,668 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/vinaysinghal7976/Network-Security "HTTP/1.1 200 OK"
+[ 2026-05-01 12:55:32,376 ] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-05-01 12:55:32,377 ] 107 dagshub - INFO - Initialized MLflow to track repo "vinaysinghal7976/Network-Security"
+[ 2026-05-01 12:55:32,378 ] 107 dagshub - INFO - Repository vinaysinghal7976/Network-Security initialized!
+[ 2026-05-01 12:59:06,590 ] 46 root - INFO - Entered the save_object method of MainUtils class
+[ 2026-05-01 12:59:06,616 ] 50 root - INFO - Exited the save_object method of MainUtils class
+[ 2026-05-01 12:59:06,616 ] 46 root - INFO - Entered the save_object method of MainUtils class
+[ 2026-05-01 12:59:06,655 ] 50 root - INFO - Exited the save_object method of MainUtils class
+[ 2026-05-01 12:59:06,655 ] 178 root - INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts/05_01_2026_12_55_17/model_trainer/trained_model/model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9921212121212121, precision_score=0.9907201936655236, recall_score=0.9935261986647784), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9698969072164948, precision_score=0.9710982658959537, recall_score=0.9686985172981878))
