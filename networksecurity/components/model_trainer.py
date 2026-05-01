@@ -26,24 +26,50 @@ from sklearn.ensemble import (
 import mlflow
 # from urllib.parse import urlparse
 
-import dagshub
-dagshub.init(repo_owner='vinaysinghal7976', repo_name='Network-Security', mlflow=True)
+# import dagshub
+# dagshub.init(repo_owner='vinaysinghal7976', repo_name='Network-Security', mlflow=True)
 
 # os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/krishnaik06/networksecurity.mlflow"
 # os.environ["MLFLOW_TRACKING_USERNAME"]="krishnaik06"
 # os.environ["MLFLOW_TRACKING_PASSWORD"]="7104284f1bb44ece21e0e2adb4e36a250ae3251f"
 
+import dagshub
 
+# class ModelTrainer:
+#     def __init__(self, model_trainer_config: ModelTrainerConfig,
+#                  data_transformation_artifact: DataTransformationArtifact):
+#         try:
+#             dagshub.init(
+#                 repo_owner='vinaysinghal7976',
+#                 repo_name='Network-Security',
+#                 mlflow=True
+#             )
+#             self.model_trainer_config = model_trainer_config
+#             self.data_transformation_artifact = data_transformation_artifact
+#         except Exception as e:
+#             raise CustomException(e, sys)
 
 
 
 class ModelTrainer:
-    def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
+    # def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
+    #     try:
+    #         self.model_trainer_config=model_trainer_config
+    #         self.data_transformation_artifact=data_transformation_artifact
+    #     except Exception as e:
+    #         raise CustomException(e,sys)
+    def __init__(self, model_trainer_config: ModelTrainerConfig,
+                 data_transformation_artifact: DataTransformationArtifact):
         try:
-            self.model_trainer_config=model_trainer_config
-            self.data_transformation_artifact=data_transformation_artifact
+            dagshub.init(
+                repo_owner='vinaysinghal7976',
+                repo_name='Network-Security',
+                mlflow=True
+            )
+            self.model_trainer_config = model_trainer_config
+            self.data_transformation_artifact = data_transformation_artifact
         except Exception as e:
-            raise CustomException(e,sys)
+            raise CustomException(e, sys)
         
     def track_mlflow(self,best_model,classificationmetric):
         # mlflow.set_registry_uri("https://dagshub.com/krishnaik06/networksecurity.mlflow")

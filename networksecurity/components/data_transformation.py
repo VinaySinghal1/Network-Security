@@ -17,7 +17,7 @@ class DataTransformation:
     def __init__(self,data_validation_artifact:DataValidationArtifact,
                  data_transformation_config:DataTransformationConfig):
         try:
-            self.data_validation_artifact:DataIngestionArtifact=data_validation_artifact
+            self.data_validation_artifact:DataValidationArtifact=data_validation_artifact
             self.data_transformation_config:DataTransformationConfig=data_transformation_config
 
             
@@ -31,12 +31,12 @@ class DataTransformation:
         except Exception as e:
             raise CustomException (e,sys)   
         
-    def get_data_transformer_object(cls)->pipeline:
+    def get_data_transformer_object(cls)->Pipeline:
         logging.info("Entered get_data_transformer_object method of Transformation class")
         try:
             imputer:KNNImputer=KNNImputer(**DATA_TRANSFORMATION_IMPUTER_PARAMS)
             logging.info(f"Initialise KNNImputer with {DATA_TRANSFORMATION_IMPUTER_PARAMS}")
-            processor:pipeline=pipeline([("imputer",imputer)])
+            processor:Pipeline=Pipeline([("imputer",imputer)])
             return processor
         except Exception as e:
             raise CustomException (e,sys)
@@ -48,8 +48,8 @@ class DataTransformation:
 
             logging.info("starting data transformation ")
             # error 
-            train_df=DataTransformation.read_data(self.data_validation_artifact.trained_file_path)
-            test_df=DataTransformation.read_data(self.data_validation_artifact.test_file_path)
+            train_df=DataTransformation.read_data(self.data_validation_artifact.valid_train_file_path)
+            test_df=DataTransformation.read_data(self.data_validation_artifact.valid_test_file_path) 
 
             ## training dataframe
             input_feature_train_df=train_df.drop(columns=[TARGET_COLUMN],axis=1)
